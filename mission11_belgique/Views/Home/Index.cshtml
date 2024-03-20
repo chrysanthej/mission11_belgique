@@ -1,0 +1,16 @@
+﻿@model BookListViewModel
+@using mission11_belgique.Models.ViewModels
+
+<h1>The Book List</h1>
+<br />
+@*Loop throught each of the books*@
+@foreach (Book b in Model.Books)
+{
+    <partial name="BookSummary" model="b" />
+}
+
+@* Use the tag helpers we made in "paginationtaghelper"*@
+<div page-model="@Model.PaginationInfo" page-action="Index" page-class-enabled="true"
+     page-class="btn" page-class-normal="btn-outline-dark" page-class-selected="btn-primary"
+     class="btn-group pull-right m-1">
+</div>
